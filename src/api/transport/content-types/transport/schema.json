@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transports",
+  "info": {
+    "singularName": "transport",
+    "pluralName": "transports",
+    "displayName": "Transport",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "package_tours": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::package-tour.package-tour",
+      "inversedBy": "transports"
+    }
+  }
+}

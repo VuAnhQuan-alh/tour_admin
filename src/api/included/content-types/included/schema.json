@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "includeds",
+  "info": {
+    "singularName": "included",
+    "pluralName": "includeds",
+    "displayName": "Included",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "package_tours": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::package-tour.package-tour",
+      "mappedBy": "includeds"
+    }
+  }
+}

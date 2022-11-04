@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "package_tours",
+  "info": {
+    "singularName": "package-tour",
+    "pluralName": "package-tours",
+    "displayName": "Package Tour",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tour_name": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "group_size": {
+      "type": "integer"
+    },
+    "tour_media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "location_string": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "depature": {
+      "type": "boolean"
+    },
+    "departure_time": {
+      "type": "datetime"
+    },
+    "return_time": {
+      "type": "datetime"
+    },
+    "tour_price_person": {
+      "type": "decimal"
+    },
+    "transports": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::transport.transport",
+      "mappedBy": "package_tours"
+    },
+    "includeds": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::included.included",
+      "inversedBy": "package_tours"
+    },
+    "dailies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::daily.daily"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "package_tour"
+    },
+    "tour_offer": {
+      "type": "boolean",
+      "default": false
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tag.tag",
+      "inversedBy": "package_tours"
+    },
+    "booking": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::booking.booking",
+      "mappedBy": "package_tour"
+    },
+    "excludeds": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::excluded.excluded",
+      "inversedBy": "package_tours"
+    }
+  }
+}

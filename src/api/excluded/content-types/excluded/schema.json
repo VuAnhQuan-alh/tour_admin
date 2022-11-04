@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "excludeds",
+  "info": {
+    "singularName": "excluded",
+    "pluralName": "excludeds",
+    "displayName": "Excluded",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "package_tours": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::package-tour.package-tour",
+      "inversedBy": "excludeds"
+    }
+  }
+}

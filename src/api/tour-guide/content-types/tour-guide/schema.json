@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tour_guides",
+  "info": {
+    "singularName": "tour-guide",
+    "pluralName": "tour-guides",
+    "displayName": "Tour Guide",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "guide_name": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string",
+      "unique": true,
+      "regex": "(84|0[3|5|7|8|9])+([0-9]{8})\\b"
+    },
+    "guide_mail": {
+      "type": "email"
+    },
+    "social_net_link": {
+      "type": "string"
+    },
+    "guide_avt": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "note": {
+      "type": "string"
+    }
+  }
+}
